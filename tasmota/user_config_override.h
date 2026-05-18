@@ -26,7 +26,7 @@
 #undef USE_EMULATION_HUE
 #undef USE_EMULATION_WEMO
 #undef USE_CUSTOM
-#undef USE_SCRIPT
+#define USE_SCRIPT
 #undef USE_RULES
 #undef USE_TIMERS
 #undef USE_TIMERS_WEB
@@ -42,8 +42,8 @@
 #undef USE_INFLUXDB
 #undef USE_PROMETHEUS
 
-// Disable unrelated drivers to keep the ESP8266 firmware small.
-#undef USE_LIGHT
+// Keep core RGB light control, but disable unrelated drivers to keep the ESP8266 firmware small.
+#define USE_LIGHT
 #undef USE_WS2812
 #undef USE_MY92X1
 #undef USE_SM16716
@@ -115,6 +115,8 @@
 #undef USE_FTC532
 #undef USE_RC_SWITCH
 #undef USE_RF_SENSOR
+#undef USE_SONOFF_RF
+#undef USE_RF_FLASH
 #undef USE_HRE
 #undef USE_A4988_STEPPER
 #undef USE_NEOPOOL
@@ -126,6 +128,7 @@
 #define USE_I2C
 #define USE_SCD40
 #define USE_DISPLAY
+#define USE_DISPLAY_SSD1306
 #undef USE_DISPLAY_MODES1TO5
 #undef USE_DISPLAY_LCD
 #undef USE_DISPLAY_MATRIX
