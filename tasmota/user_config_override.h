@@ -9,6 +9,11 @@
 #define _USER_CONFIG_OVERRIDE_H_
 
 // Identify this image and default to the Wemos D1 mini style module.
+// FIRMWARE_MINICUSTOM also prevents the ESP8266_4M post-config defaults from
+// re-enabling UFS/FTP/SD-card support for this dedicated no-filesystem build.
+#ifndef FIRMWARE_MINICUSTOM
+#define FIRMWARE_MINICUSTOM
+#endif
 #ifndef CODE_IMAGE_STR
 #define CODE_IMAGE_STR "co2-display"
 #endif
@@ -22,6 +27,7 @@
 #undef USE_HOME_ASSISTANT
 #undef USE_KNX
 #undef USE_DISCOVERY
+#undef USE_TASMOTA_DISCOVERY
 #undef USE_EMULATION
 #undef USE_EMULATION_HUE
 #undef USE_EMULATION_WEMO
@@ -37,6 +43,7 @@
 #undef USE_SERIAL_BRIDGE
 #undef USE_MODBUS_BRIDGE
 #undef USE_TCP_BRIDGE
+#undef USE_FTP
 #undef USE_UFILESYS
 #undef USE_SDCARD
 #undef USE_INFLUXDB
