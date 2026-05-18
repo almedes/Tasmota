@@ -21,6 +21,14 @@
 #define MODULE WEMOS
 
 // Keep network/security features minimal while retaining normal Tasmota setup access.
+// Webserver and Wi-Fi Manager are required so a newly flashed Wemos exposes
+// the Tasmota web UI/captive portal and can receive WLAN credentials without
+// compiling any secrets into the firmware.
+#define USE_WEBSERVER
+#undef WEB_SERVER
+#define WEB_SERVER 2
+#undef WIFI_CONFIG_TOOL
+#define WIFI_CONFIG_TOOL WIFI_MANAGER
 #undef USE_ARDUINO_OTA
 #undef USE_MQTT_TLS
 #undef USE_DOMOTICZ

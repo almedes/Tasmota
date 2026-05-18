@@ -8,6 +8,9 @@ This custom environment builds a compact ESP8266 image for a Wemos D1 mini with:
 - Universal display support with an embedded SSD1306 128x64 I2C descriptor at address `0x3c`
 
 No Wi-Fi credentials, MQTT credentials, passwords, or other secrets are included.
+The firmware keeps the Tasmota web server enabled and defaults to Wi-Fi Manager,
+so after flashing a Wemos D1 mini with empty credentials it starts the setup
+access point/captive portal where WLAN credentials can be entered in the web UI.
 
 ## Build
 
